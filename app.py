@@ -42,7 +42,7 @@ def fun():
 
 st.markdown('<p class="medium-font">Enter Review !!</p>', unsafe_allow_html=True)
 review = st.text_input("here")
-with open('imdb-rating.ipynb','rb') as f:
+with open('imdb_rating.ipynb','rb') as f:
     model = joblib.load('imdb-rating.ipynb')
 op = model.predict([review])
 if st.button('Analyse'):
