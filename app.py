@@ -19,7 +19,7 @@ df.drop(df.tail(10000).index,
 df.sentiment.value_counts()
 sns.countplot(x = df['sentiment'])
 
-import re
+import regex
 stop_words = stopwords.words('english')
 len(stop_words)
 negative_words=['no','not',"don't","aren't","couldn't","didn't","doesn't","hadn't","hasn't","haven't","isn't","mightn't","mustn't","needn't","shouldn't","wasn't","weren't","won't","wouldn't"]
