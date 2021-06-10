@@ -31,7 +31,7 @@ st.markdown('<p class="medium-font">Enter your review!</p>',
             unsafe_allow_html=True)
 
 review= st.text_input("here")
-model=joblib.load('imdb-rating')
+model=joblib.load('https://github.com/Mohini1733/Major_Project/blob/main/imdb-rating')
 
 op=model.predict([review])
 
