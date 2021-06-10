@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 nltk.download('all')
 
 path = 'https://github.com/Mohini1733/Major_Project/blob/main/IMDB%20Dataset.csv'
-df = pd.read_csv(path)
+df = pd.read_csv(path , sep="<br>")
 df.head()
 
 df['sentiment'].value_counts()
