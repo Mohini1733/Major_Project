@@ -1,8 +1,41 @@
+from pyngrok import ngrok
+%%writefile app.py
 import streamlit as st
 import joblib
-model = joblib.load('imdb-rating')
-st.title('Sentiment Analyzer')
-input = st.text_input('Enter your review:')
-output = model.predict([input])
-if st.button('Predict'):
-  st.title(output[0])
+import base64
+st.set_page_config(layout="wide")
+st.markdown("""
+<style>
+.big-font {
+    font-size;50px  !important;
+    font-family:Arial;
+    color:#D5C4C4; 
+
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+.big-font {
+    font-size;20px  !important;
+    font-family:Courier;
+    color:#D5C4C4; 
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<p class="big-font">IMDB Review Sentiment Analysis !!</p>',
+            unsafe_allow_html=True)
+
+st.markdown('<p class="medium-font">Enter your review!</p>', 
+            unsafe_allow_html=True)
+
+review= st.text_input("here")
+model=joblib.load('imdb-rating')
+
+op=model.predict([review])
+
+if st.button('Analyse'):
+  st.markdown(f'<p class="medium-font">The Review is {op[0]} </p>',
+              unsafe_allow_html=True)
