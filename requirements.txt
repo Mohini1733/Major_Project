@@ -4,5 +4,3 @@ scikit_learn==0.22.2.post1
 seaborn==0.11.1
 nltk==3.6.2
 regex==2021.4.4
-NumPy==1.9.1
-pandas==1.2.4
